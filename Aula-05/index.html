@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Escolar Web</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/myScript.js"></script>
+</head>
+<body>
+    
+    <div>
+        <form action="">
+
+            <label for="nome">Nome do Aluno</label>
+            <input type="text" name="nome" id="nome" /><br />
+
+            <label for="diciplina">Diciplina</label>
+            <select name="disciplina" id="disciplina">
+                <option value="">Selecione uma Diciplina</option>
+                <option value="Matematica">Matematica</option>
+                <option value="Portugues">Portugues</option>
+                <option value="Quimica">Quimica</option>
+                <option value="Fisica">Fisica</option>
+            </select><br>
+
+            <label for="nota1">Nota 01</label>
+            <input type="number" name="nota1" id="nota1" /><br />
+
+            <label for="nota2">Nota 02</label>
+            <input type="number" name="nota2" id="nota2" /><br />
+
+            <label for="nota3">Nota 03</label>
+            <input type="number" name="nota3" id="nota3" /><br />
+
+            <div>
+                <button type="button" onclick="calcularMediaEscolar()">Calcular Media</button>
+                <button type="reset">Cancelar</button>
+            </div>
+
+            <hr>
+
+            <h3 id="resultado"></h3>
+        </form>
+    </div>
+</body>
+</html>

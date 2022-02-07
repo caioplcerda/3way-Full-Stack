@@ -1,0 +1,21 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "caio3004",
+    "database": "agenda_api_db",
+    "synchronize": true,
+    "entities": [
+      "./src/api/entity/**/*.ts"
+    ],
+    "migrations": [
+      "src/migrations/*.ts"
+    ],
+    "cli": {
+      "migrationsDir": "./src/migrations/"
+    }
+  }
+]

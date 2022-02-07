@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "axios": "^0.24.0",
+    "lodash": "^4.17.21"
+  },
+  "name": "aula-02",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

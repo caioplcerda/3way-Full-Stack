@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+
+    <style>
+        .tudo{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 80%;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        
+        h3 {
+        color: blue;
+        border-radius: 10px;
+        padding: 50px;
+        font-size: 40px;
+        text-align: center;
+        }
+        .entrada {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            color: orangered;
+            background-color: blue;
+            border-radius: 5px;
+            margin: 40px;
+        }
+        .botoes{
+            text-align: center;
+        }
+        .resultado{
+            text-align: center;
+            color: blue;
+        border-radius: 10px;
+        padding: 50px;
+        font-size: 40px;
+        text-align: center;
+        }
+    </style>
+
+    <script>
+        function diminuir(){
+            let valor1 = parseFloat(document.getElementById('valor1').value)
+            let valor2 = parseFloat(document.getElementById('valor2').value)
+
+            let soma = valor1 + ' - ' + valor2 + ' = ' + (valor1 - valor2)
+
+            document.getElementById('resultado').innerHTML = soma
+        }
+        function dividir(){
+            let valor1 = parseFloat(document.getElementById('valor1').value)
+            let valor2 = parseFloat(document.getElementById('valor2').value)
+
+            let soma = valor1 + " : " + valor2 + " = " + (valor1 / valor2)
+ 
+            document.getElementById('resultado').innerHTML = soma
+        }
+        function somar(){
+            let valor1 = parseFloat(document.getElementById('valor1').value)
+            let valor2 = parseFloat(document.getElementById('valor2').value)
+
+            let soma = valor1 + ' + ' + valor2 + ' = ' + (valor1 + valor2)
+
+            document.getElementById('resultado').innerHTML = soma
+        }
+
+        function multiplicar(){
+            let valor1 = parseFloat(document.getElementById('valor1').value)
+            let valor2 = parseFloat(document.getElementById('valor2').value)
+
+            let soma = valor1 + ' * ' + valor2 + ' = ' + (valor1 * valor2)
+
+            document.getElementById('resultado').innerHTML = soma
+        }
+    </script>
+<div class="tudo">
+<h3>Calculadora</h3>
+</head>
+<body>
+    <form action="">
+        <div class="entrada">
+            <label for="valor1">Numero 01:</label>
+            <input type="text" id="valor1" size="20"><br>
+
+            <label for="valor2">Numero 02:</label>
+            <input type="text" id="valor2" size="20"><br>
+        </div>
+        <hr>
+
+        <div class="botoes">
+            <input type="button" value="Somar" onclick="somar()">
+            <input type="button" value="Multiplicar" onclick="multiplicar()">
+            <input type="button" value="Diminuir" onclick="diminuir()">
+            <input type="button" value="Dividir" onclick="dividir()">
+        </div>
+
+        <hr>
+        <div class="resultado">
+            Resultado:
+            <p id="resultado"></p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

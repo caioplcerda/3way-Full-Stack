@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>O que o Javascript pode fazer?</h1>
+
+    <p id="exemplo01">Javascript pode alterar o conteudo do HTML</p>
+
+    <button type="button" onclick="document.getElementById('exemplo01').innerHTML='Ola Javascript'">Clique aqui</button>
+    
+    <hr />
+
+    <p id="exemplo02">Javascript pode alterar o estilo do HTML</p>
+    <button type="button" onclick="document.getElementById('exemplo02').style.fontSize='35px'">Clique aqui</button>
+ 
+    <hr />
+
+    <p id="exemplo03">Javascript pode ocultar ou mostrar HTML</p>
+    <button type="button" onclick="document.getElementById('exemplo03').style.display='block'">Mostrar</button>
+
+    <button type="button" onclick="document.getElementById('exemplo03').style.display='none'">Ocultar</button>
+
+    <hr />
+
+    <p>Javascriptpode alterar o valor do atributo</p>
+
+    <button type="button" onclick="document.getElementById('lampada').src='img/pic_bulbon.gif'">Ligar</button>
+
+    <img src="img/pic_bulboff.png" id="lampada" style="width: 100px"/>
+
+    <button type="button" onclick="document.getElementById('lampada').src='img/pic_bulboff.png'">Desligar</button>
+
+    <hr />
+
+    <span id="dataHora"></span><br>
+
+    <button type="button" onclick="document.getElementById('dataHora').innerHTML=Date()">Mostre o horario</button>
+
+</body>
+</html>
