@@ -29,7 +29,7 @@ class UserController {
 
     public findAll =async (req: Request, res: Response) => {
         const users = await this.userService.findAll()
-        res.send(users).json()
+        res.send(users)
     }
 
 }

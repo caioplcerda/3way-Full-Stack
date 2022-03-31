@@ -12,13 +12,13 @@ class FuncionarioController {
 
     public findAll =async (req: Request, res: Response) => {
         const funcionarioS = await this.funcionarioService.findAll()
-        res.send(funcionarioS).json()
+        res.send(funcionarioS)
     }
 
     public findById =async (req: Request, res: Response) => {
         const id = req.params.id;
         const funcionario = await this.funcionarioService.findById(Number(id))
-        res.send(funcionario).json()
+        res.send(funcionario)
     }
 
     public create =async (req: Request, res: Response) => {

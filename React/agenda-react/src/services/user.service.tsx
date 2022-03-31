@@ -1,7 +1,7 @@
-import http from "../http";
+import http from '../http';
 
 class UserService {
-  getUserBoard(){
+  getUserBoard() {
     return http.get('/users');
   }
 }

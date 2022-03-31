@@ -1,8 +1,8 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Component, ReactNode } from "react";
-import { RouteComponentProps } from "react-router-dom";
-import * as Yup from "yup";
-import AuthService from "../../services/auth.service";
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Component } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+import * as Yup from 'yup';
+import AuthService from '../../services/auth.service';
 
 interface RouterProps {
   history: string;
@@ -23,17 +23,17 @@ export default class Login extends Component<Props, State> {
     this.handleLogin = this.handleLogin.bind(this);
 
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       loading: false,
-      message: "",
+      message: '',
     };
   }
 
   validationSchema() {
     return Yup.object().shape({
-      email: Yup.string().required("Esse email e obrigatorio!"),
-      password: Yup.string().required("Esse Senha e obrigatorio!"),
+      email: Yup.string().required('O email é obrigatório!'),
+      password: Yup.string().required('A senha é obrigatória!'),
     });
   }
 
@@ -41,22 +41,18 @@ export default class Login extends Component<Props, State> {
     const { email, password } = formValue;
 
     this.setState({
-      message: "",
+      message: '',
       loading: true,
     });
 
     AuthService.login(email, password).then(
       () => {
-        this.props.history.push("/profile");
+        this.props.history.push('/profile');
         window.location.reload();
       },
       (error) => {
         const resMessage =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
+          (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
 
         this.setState({
           loading: false,
@@ -70,57 +66,31 @@ export default class Login extends Component<Props, State> {
     const { loading, message } = this.state;
 
     const initialValues = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     };
 
     return (
       <div className="col-md-12">
         <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
-          <Formik
-            initialValues={initialValues}
-            validationSchema={this.validationSchema}
-            onSubmit={this.handleLogin}
-          >
+          <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" />
+          <Formik initialValues={initialValues} validationSchema={this.validationSchema} onSubmit={this.handleLogin}>
             <Form>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <Field name="email" type="text" className="form-control" />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="alert alert-danger"
-                />
+                <ErrorMessage name="email" component="div" className="alert alert-danger" />
               </div>
 
               <div className="form-group">
                 <label htmlFor="password">Password</label>
-                <Field
-                  name="password"
-                  type="password"
-                  className="form-control"
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="alert alert-danger"
-                />
+                <Field name="password" type="password" className="form-control" />
+                <ErrorMessage name="password" component="div" className="alert alert-danger" />
               </div>
 
               <div className="form-group">
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-block"
-                  disabled={loading}
-                >
-                  {loading && (
-                    <span className="spinner-border spinner-border-sm"></span>
-                  )}
+                <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
+                  {loading && <span className="spinner-border spinner-border-sm"></span>}
                   <span>Login</span>
                 </button>
               </div>

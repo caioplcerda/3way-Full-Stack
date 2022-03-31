@@ -1,12 +1,12 @@
 import { Router } from "express";
 import AuthControler from "../controller/AuthControler";
 import UserController from "../controller/UserController";
-import authMiddleware from "../middleware/AuthMiddleware";
+import AuthMiddleware from "../middleware/authMiddleware";
 
 const userRoutes = Router();
 
-userRoutes.post('/', authMiddleware, UserController.create);
-userRoutes.get('/', UserController.findAll);
+userRoutes.get('/', AuthMiddleware, UserController.findAll);
+userRoutes.post('/', UserController.create);
 userRoutes.post('/auth', AuthControler.authenticate);
 
 export default userRoutes;
